@@ -8,6 +8,7 @@ defmodule OrdersApi.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {OrdersApi.StateManager, []},
       # Start the Telemetry supervisor
       OrdersApiWeb.Telemetry,
       # Start the PubSub system
